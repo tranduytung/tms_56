@@ -29,3 +29,10 @@ end
 5.times do |n|
   CourseSubject.create! course_id: 1, subject_id: n+1
 end
+
+users = User.all
+user  = users.first
+following = users[2..10]
+followers = users[3..5]
+following.each{|followed| user.follow(followed)}
+followers.each{|follower| follower.follow(user)}

@@ -59,3 +59,11 @@ en:
 
   warning:
     delete: "You Sure ?"
+    
+  following: "following"
+  followers: "followers"
+
+  follow: "Follow"
+  unfollow: "Unfollow"
+  view_profile: "view my profile"
+  user_show: "User Home Page"
