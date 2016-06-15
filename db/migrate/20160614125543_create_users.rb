@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :password_digest
       t.string :remember_digest
+      t.integer :role, default: 0
 
       t.timestamps null: false
     end

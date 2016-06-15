@@ -5,6 +5,15 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to t(:home), root_path %></li>
         <li><%= link_to t(:help), help_path %></li>
+        <% if user_signed_in? && current_user.supervisor? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <%= t :supervisor %><b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to t(:all_user), supervisor_trainees_path %></li>
+            </ul>
+          </li>
+        <% end %>
         <% if user_signed_in? %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
