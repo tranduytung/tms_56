@@ -25,3 +25,9 @@ en:
 
   account: "Acount"
   setting: "Setting"
+
+  supervisor: "Supervisor"
+  all_trainee: "All Trainees"
+
+  message:
+    you_are_not_supervisor: "You are not a supervisor"

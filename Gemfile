@@ -10,10 +10,14 @@ gem "turbolinks"
 gem "jbuilder", "~> 2.0"
 gem "sdoc", "~> 0.4.0", group: :doc
 gem "devise"
+gem "will_paginate", "3.0.7"
+gem "bootstrap-will_paginate", "0.0.10"
+gem "config"
 
 group :development, :test do
   gem "byebug"
   gem "sqlite3"
   gem "web-console", "~> 2.0"
   gem "spring"
+  gem "faker"
 end
