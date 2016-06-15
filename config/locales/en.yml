@@ -8,3 +8,10 @@ en:
   contact: "Contact"
   develop_by: "Developed by HEDSPI"
   welcome: "Welcome to Project 2"
+
+  login: "Log in"
+  logout: "Log out"
+  sign_up: "Sign up"
+  sign_up_now: "Sign Up Now!"
+  forgot_password: "Forgot your password?"
+  characters_minimum: "(%{number} characters_minimum)"
