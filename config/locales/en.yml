@@ -31,3 +31,16 @@ en:
 
   message:
     you_are_not_supervisor: "You are not a supervisor"
+    
+  courses:
+    subjects: "Subjects"
+    description: "Description"
+    
+  user_courses:
+    all_courses: "All courses"
+    user: "user"
+    in_course: "in course"
+    
+  object_not_found: "%{object} with id %{id} not found"
+  
+  not_authorized: "You are not authorized to access this page"

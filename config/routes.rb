@@ -11,4 +11,7 @@ Rails.application.routes.draw do
     root "static_pages#home"
     resources :users, only: [:index]
   end
+  
+  resources :courses, only: [:show]
+  resources :user_courses, only: [:index]
 end
