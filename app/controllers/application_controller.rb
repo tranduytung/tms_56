@@ -3,10 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  def require_supervisor
-    unless current_user.supervisor?
-      flash[:danger] = t "message.you_are_not_supervisor"
-      redirect_to root_path
-    end
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, alert: exception.message
   end
 end
