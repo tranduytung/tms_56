@@ -5,7 +5,13 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   rescue_from CanCan::AccessDenied do |exception|
-    flash[:error] = t "not_authorized"
+    flash[:danger] = t "not_authorized"
     redirect_to root_url
+  end
+  
+  private
+  def current_ability
+    namespace = controller_path.split("/").first
+    Ability.new current_user, namespace
   end
 end
