@@ -1,0 +1,21 @@
+<%= provide :title, @course.content %>
+
+<div>
+  <ul class="list-inline">
+    <h3><%= @course.content %></h3>
+    <div>
+      <%= pluralize @course.users.count, t("user_courses.user") %>
+      <%= t "user_courses.in_course" %>
+    </div>
+    <br />
+    <h3><%= t "courses.description" %></h3>
+    <p><%= @course.description %></p>
+    <br />
+    <h3><%= t "courses.subjects" %></h3>
+    <% @course.subjects.each do |subject| %>
+      <li>
+        <%= link_to subject.content, "#", class: "btn btn-lg btn-default" %>
+      </li>
+    <% end %>
+  </ul>
+</div>

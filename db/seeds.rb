@@ -16,3 +16,16 @@ User.create!(
     password_confirmation: password,
     role: 0)
 end
+
+5.times do |n|
+  Course.create! content: "Training-#{n+1}", description: "Traning course"
+end
+3.times do |n|
+  UserCourse.create! user_id: 1, course_id: n+1, status: false
+end
+5.times do |n|
+  Subject.create! content: "Subject-#{n+1}"
+end
+5.times do |n|
+  CourseSubject.create! course_id: 1, subject_id: n+1
+end
