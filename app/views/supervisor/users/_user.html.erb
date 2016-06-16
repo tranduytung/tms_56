@@ -1,4 +1,5 @@
 <li>
   <%= gravatar_for user %>
   <%= link_to user.name, "#" %>
+  <%= link_to t(:edit_trainee), edit_supervisor_user_path(user) %>
 </li>

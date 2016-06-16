@@ -25,12 +25,21 @@ en:
 
   account: "Acount"
   setting: "Setting"
-
+  
+  trainees: "Trainees"
   supervisor: "Supervisor"
   all_trainee: "All Trainees"
+  edit_trainee: "Edit Trainee"
+  trainee: "Trainee"
+
+  form_error: "The form contains "
+  error: "error"
 
   message:
     you_are_not_supervisor: "You are not a supervisor"
+    edit_trainee_success: "Edit successfull"
+    edit_trainee_unsuccess: "Edit unsuccessfull"
+    cant_edit_user: "You can't edit this user"
     
   courses:
     subjects: "Subjects"

@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
+  validates :name, presence: true, length: {maximum: 50}
+
   has_many :activities, dependent: :destroy
   has_many :user_courses, dependent: :destroy
   has_many :courses, through: :user_courses
