@@ -1,9 +1,9 @@
 <% provide :title, t(:all_trainee) %>
 <div class="row">
   <h1><%= t :all_trainee %></h1>
-  <%= will_paginate %>
+  <%= paginate @users %>
   <ul class="user">
-    <%= render @trainees %>
+    <%= render @users %>
   </ul>
-  <%= will_paginate %>
+  <%= paginate @users %>
 </div>
