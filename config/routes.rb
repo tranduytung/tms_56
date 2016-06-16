@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   namespace :supervisor do
     root "static_pages#home"
-    resources :users, only: [:index]
+    resources :users, only: [:index, :edit, :update]
   end
   
   resources :courses, only: [:show]

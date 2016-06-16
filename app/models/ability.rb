@@ -5,7 +5,9 @@ class Ability
     user ||= User.new
     if user.supervisor?
       can :read, User
-      can :manage, :all
+      can [:edit, :update], User do |other_user|
+        user != other_user
+      end
     elsif user.trainee?
       can :read, Course
       can :read, Subject
