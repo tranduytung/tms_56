@@ -3,10 +3,11 @@ class Ability
 
   def initialize user, namespace
     user ||= User.new
-    
+    alias_action :new, :create, :edit, :update, :destroy, to: :crud
+
     if user.supervisor?
       can :read, :all
-      can [:edit, :update, :destroy], User do |other_user|
+      can :crud, User do |other_user|
         user != other_user
       end
     else
