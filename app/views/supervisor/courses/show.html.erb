@@ -1,0 +1,40 @@
+<% provide :title, @course.content %>
+
+<div class="row">
+  <div class="col-md-5 panel panel-default">
+    <div class="text-center">
+      <h3><%= t :all_trainee %></h3>
+      <div class="center">
+        <%= link_to "#", class: "btn btn-info" do %>
+          <span><%= t :add_user %></span>
+        <% end %>
+      </div>
+      <ul class="list-unstyled">
+        <% @course.users.each do |user| %>
+          <div class="input-group fields">
+            <div class="form-control">
+              <span><%= link_to user.name, "#" %></span>
+            </div>
+            <span class="input-group-addon">
+              <%= link_to t(:remove), "#" %>
+            </span>
+          </div>
+        <% end %>
+      </ul>
+      <hr/>
+    </div>
+  </div>
+  <div class="col-md-6 panel panel-default">
+    <div class="text-center">
+      <h3><%= @course.content %></h3>
+      <hr/>
+      <p><%= @course.description %></p>
+      <hr/>
+      <% @course.subjects.each do |subject| %>
+        <%= subject.content %>
+        <%= subject.description %>
+        <br>
+      <% end %>
+    </div>
+  </div>
+</div>

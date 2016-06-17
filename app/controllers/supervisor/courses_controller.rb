@@ -7,6 +7,9 @@ class Supervisor::CoursesController < ApplicationController
     @course = Course.new
   end
 
+  def show
+  end
+
   def create
     if @course.save
       flash[:success] = t "courses.create_success"

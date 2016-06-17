@@ -26,6 +26,7 @@ en:
   account: "Account"
   setting: "Setting"
   delete: "Delete"
+  remove: "Remove"
 
   trainees: "Trainees"
   supervisor: "Supervisor"
@@ -33,6 +34,7 @@ en:
   edit_trainee: "Edit"
   trainee: "Trainee"
   new_trainee: "New Trainee"
+  add_user: "Add User"
 
   message:
     you_are_not_supervisor: "You are not a supervisor"
