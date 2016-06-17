@@ -8,4 +8,7 @@
       <%= render "shared/stats" %>
     </section>
   </div>
+  <div class="col-md-8">
+    <%= render "follow_form" if user_signed_in? %>
+  </div>
 </div>
