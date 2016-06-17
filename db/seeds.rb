@@ -20,9 +20,15 @@ end
 5.times do |n|
   Course.create! content: "Training-#{n+1}", description: "Traning course"
 end
-3.times do |n|
-  UserCourse.create! user_id: 1, course_id: n+1, status: false
+
+users = User.order(:created_at).take(5)
+courses = Course.order(:created_at)
+users.each do |user|
+  courses.take(rand(Course.count) + 1).each do |course|
+    user.user_courses.create! course_id: course.id
+  end
 end
+
 5.times do |n|
   Subject.create! content: "Subject-#{n+1}"
 end

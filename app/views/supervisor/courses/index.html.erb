@@ -11,7 +11,7 @@
         <% @courses.each do |course| %>
           <li>
             <div class="col-md-8">
-              <%= course.content %>
+              <%= link_to course.content, supervisor_course_path(course) %>
             </div>
           </li>
         <% end %>
