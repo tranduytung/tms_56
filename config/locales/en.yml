@@ -90,3 +90,18 @@ en:
   unfollow: "Unfollow"
   view_profile: "view my profile"
   user_show: "User Home Page"
+
+  subject:
+    all_subjects: "All Subjects"
+    new_subject: "New Subject"
+    content: "content"
+    description: "description"
+    tasks: "Tasks"
+    submit: "Create subject"
+    add_success: "Success add subject"
+    add_fail: "Failed add subject"
+  
+  task: 
+    content: "content"
+    description: "description"
+    add_more_task: "Add more Task"
