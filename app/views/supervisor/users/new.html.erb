@@ -1,5 +1,5 @@
-<% provide :title, t(:edit_trainee) %>
-<h1><%= t :edit_trainee %></h1>
+<% provide :title, t(:new_trainee) %>
+<h1><%= t :new_trainee %></h1>
 <%= form_for [:supervisor, @user] do |f| %>
   <%= render "shared/error_messages", object: @user %>
 
@@ -17,5 +17,5 @@
 
   <%= f.select :role, @role_type.collect{|key, value| [t(key), key]} %>
 
-  <%= f.submit t(:edit_trainee), class: "btn btn-primary" %>
+  <%= f.submit t(:new_trainee), class: "btn btn-primary" %>
 <% end %>

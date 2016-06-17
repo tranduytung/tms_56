@@ -32,6 +32,7 @@ en:
   all_trainee: "All Trainees"
   edit_trainee: "Edit"
   trainee: "Trainee"
+  new_trainee: "New Trainee"
 
   message:
     you_are_not_supervisor: "You are not a supervisor"
@@ -44,7 +45,10 @@ en:
   shared:
     form: "This form contains "
     error: "error"
-    
+    delete_trainee_success: "Delete successfull"
+    delete_trainee_unsuccess: "Delete unsuccessfull"
+    new_user_successful: "Add new a user successfull"
+
   courses:
     all_courses: "All courses"
     subjects: "Subjects"

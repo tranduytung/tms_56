@@ -1,6 +1,11 @@
 <% provide :title, t(:all_trainee) %>
 <div class="row">
   <h1><%= t :all_trainee %></h1>
+  <div class="center">
+    <%= link_to new_supervisor_user_path, class: "btn btn-info" do %>
+      <span><%= t :new_user %></span>
+    <% end %>
+  </div>
   <%= paginate @users %>
   <ul class="user list-unstyled">
     <%= render @users %>
