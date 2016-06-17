@@ -14,4 +14,10 @@ Rails.application.routes.draw do
   
   resources :courses, only: [:show]
   resources :user_courses, only: [:index]
+
+  resources :users, only: [:show]
+  resources :relationships, only: [:create, :destroy, :show]
+  resources :users, only: [:index] do 
+    resources :relationships, only: [:index]
+  end
 end
