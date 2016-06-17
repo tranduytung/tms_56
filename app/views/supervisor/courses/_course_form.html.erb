@@ -1,0 +1,27 @@
+<div class="col-md-6 col-md-offset-1 panel panel-default">
+  <div class="text-center">
+    <h3><%= link_to t("courses.new_course"), supervisor_courses_path %></h3>
+    <hr />
+  </div>
+  <%= form_for [:supervisor, @course] do |f| %>
+    <%= render "shared/error_messages", object: @course %>
+    
+    <%= f.label :content, t("courses.content") %>
+    <%= f.text_field :content, class: "form-control" %>
+    
+    <%= f.label :description, t("courses.description") %>
+    <%= f.text_area :description, class: "form-control" %>
+    
+    <%= f.label :subjects, t("courses.subjects") %>
+    <%= f.collection_check_boxes :subject_ids, @subjects, :id, :content do |b| %>
+      <div class="col-md-offset-1">
+        <%= b.label do %>
+          <%= b.check_box + " " + b.text %>
+        <% end %>
+      </div>
+    <% end %>
+    
+    <%= f.submit t("courses.submit"),
+      class: "btn btn-primary col-md-4 col-md-offset-4" %>
+  <% end %>
+</div>

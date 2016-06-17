@@ -9,3 +9,5 @@ user:
 relation:
   followers: "followers"
   following: "following"
+courses:
+  per_page: 10

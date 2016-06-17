@@ -1,0 +1,25 @@
+<%= provide :title, t("courses.all_courses") %>
+
+<div class="row">
+  <div class="col-md-5 panel panel-default">
+    <div class="text-center">
+      <h3><%= t "courses.all_courses" %></h3>
+      <hr />
+    </div>
+    <div class="panel-body">
+      <ul class="list-unstyled">
+        <% @courses.each do |course| %>
+          <li>
+            <div class="col-md-8">
+              <%= course.content %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+      <div class="text-center">
+        <%= paginate @courses %>
+      </div>
+    </div>
+  </div>
+  <%= render "course_form" %>
+</div>

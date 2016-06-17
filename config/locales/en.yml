@@ -23,30 +23,40 @@ en:
   current_password: "(we need your current password to confirm your changes)"
   back: "Back"
 
-  account: "Acount"
+  account: "Account"
   setting: "Setting"
   delete: "Delete"
 
   trainees: "Trainees"
   supervisor: "Supervisor"
   all_trainee: "All Trainees"
-  edit_trainee: "Edit Trainee"
+  edit_trainee: "Edit"
   trainee: "Trainee"
-
-  form_error: "The form contains "
-  error: "error"
 
   message:
     you_are_not_supervisor: "You are not a supervisor"
-    edit_trainee_success: "Edit successfull"
-    edit_trainee_unsuccess: "Edit unsuccessfull"
+    edit_trainee_success: "Edit successful"
+    edit_trainee_unsuccess: "Edit unsuccessful"
     cant_edit_user: "You can't edit this user"
-    delete_trainee_success: "Delete successfull"
-    delete_trainee_unsuccess: "Delete unsuccessfull"
+    delete_trainee_success: "Delete successful"
+    delete_trainee_unsuccess: "Delete unsuccessful"
+
+  shared:
+    form: "This form contains "
+    error: "error"
     
   courses:
+    all_courses: "All courses"
     subjects: "Subjects"
     description: "Description"
+    edit: "Edit"
+    delete: "Delete"
+    confirm: "Are you sure?"
+    submit: "Submit"
+    create_success: "Course created"
+    create_error: "Failed to create course"
+    delete_success: "Course deleted"
+    delete_error: "Failed to delete course"
     
   user_courses:
     all_courses: "All courses"

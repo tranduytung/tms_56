@@ -100,29 +100,6 @@ footer ul li {
   background-color: #289dcc !important;
 }
 
-.stats {
-  overflow: auto;
-  margin-top: 0;
-  padding: 0;
-  a {
-    float: left;
-    padding: 0 10px;
-    border-left: 1px solid $gray-lighter;
-    color: gray;
-    &:first-child {
-      padding-left: 0;
-      border: 0;
-    }
-    &:hover {
-      text-decoration: none;
-      color: blue;
-    }
-  }
-  strong {
-    display: block;
-  }
-}
-
 .gravatar {
   float: left;
   margin-right: 10px;
@@ -172,4 +149,41 @@ footer ul li {
 
 .user{
   padding-top: 30px;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+/*flash*/
+.alert-error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+}
+
+.alert-alert {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+}
+
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
+}
+
+.alert-notice {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
 }
