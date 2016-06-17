@@ -19,6 +19,15 @@ class Supervisor::UsersController < ApplicationController
     end
   end
 
+  def destroy
+    if @user.destroy
+      flash[:success] = t "message.delete_trainee_success"
+    else
+      flash[:danger] = t "message.delete_trainee_unsuccess"
+    end
+    redirect_to supervisor_users_path
+  end
+
   private
   def user_params
     params.require(:user).permit :name, :email, :role

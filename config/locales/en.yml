@@ -25,7 +25,8 @@ en:
 
   account: "Acount"
   setting: "Setting"
-  
+  delete: "Delete"
+
   trainees: "Trainees"
   supervisor: "Supervisor"
   all_trainee: "All Trainees"
@@ -40,6 +41,8 @@ en:
     edit_trainee_success: "Edit successfull"
     edit_trainee_unsuccess: "Edit unsuccessfull"
     cant_edit_user: "You can't edit this user"
+    delete_trainee_success: "Delete successfull"
+    delete_trainee_unsuccess: "Delete unsuccessfull"
     
   courses:
     subjects: "Subjects"
@@ -53,3 +56,6 @@ en:
   object_not_found: "%{object} with id %{id} not found"
   
   not_authorized: "You are not authorized to access this page"
+
+  warning:
+    delete: "You Sure ?"
