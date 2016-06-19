@@ -6,9 +6,9 @@ class Ability
     alias_action :new, :create, :edit, :update, :destroy, to: :crud
 
     if user.supervisor?
-      can :read, :all
-      can :crud, User do |other_user|
-        user != other_user
+      can :manage, :all
+      cannot :crud, User do |other_user|
+        user == other_user
       end
     else
       if namespace == "supervisor"

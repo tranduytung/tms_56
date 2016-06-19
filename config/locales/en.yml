@@ -63,6 +63,8 @@ en:
     create_error: "Failed to create course"
     delete_success: "Course deleted"
     delete_error: "Failed to delete course"
+    update_success: "Course updated"
+    update_error: "Failed to update course"
     
   user_courses:
     all_courses: "All courses"
