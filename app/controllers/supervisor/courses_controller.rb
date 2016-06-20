@@ -35,12 +35,21 @@ class Supervisor::CoursesController < ApplicationController
     end
   end
 
+  def destroy
+    if @course.destroy
+      flash[:success] = t "courses.delete_success"
+    else
+      flash[:danger] = t "courses.delete_error"
+    end
+    redirect_to supervisor_courses_path
+  end
+
   private
   def course_params
     params.require(:course).permit :content, :description, subject_ids: []
   end
 
   def load_subjects
-    @subjects = Subject.all
+    @subjects = Subject.all.page(params[:subject_page]).per Settings.courses.per_page
   end
 end

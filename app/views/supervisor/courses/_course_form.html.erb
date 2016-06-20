@@ -20,7 +20,9 @@
         <% end %>
       </div>
     <% end %>
-    
+    <div class="text-center">
+      <%= paginate @subjects, param_name: :subject_page, remote: true %>
+    </div>
     <%= f.submit t("courses.submit"),
       class: "btn btn-primary col-md-4 col-md-offset-4" %>
   <% end %>

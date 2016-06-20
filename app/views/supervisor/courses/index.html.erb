@@ -15,6 +15,8 @@
           <div class="col-md-4">
             <%= link_to t("courses.edit"), edit_supervisor_course_path(course),
               remote: true %>
+            <%= link_to t("courses.delete"), supervisor_course_path(course),
+              method: :delete, data: {confirm: t("courses.confirm")} %>
           </div>
         <% end %>
       </ul>
