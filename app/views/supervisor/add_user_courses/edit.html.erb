@@ -1,15 +1,8 @@
 <% provide :title, @course.content %>
-
 <div class="row">
   <div class="col-md-5 panel panel-default">
     <div class="text-center">
       <h3><%= t :all_trainee %></h3>
-      <div class="center">
-        <%= link_to edit_supervisor_course_add_user_courses_path(@course),
-          class: "btn btn-info" do %>
-          <span><%= t :add_user %></span>
-        <% end %>
-      </div>
       <ul class="list-unstyled">
         <% @course.users.each do |user| %>
           <div class="input-group fields">
@@ -25,16 +18,21 @@
       <hr/>
     </div>
   </div>
-  <div class="col-md-6 col-md-offset-1 panel panel-default">
-    <div class="text-center">
-      <h3><%= @course.content %></h3>
+  <div class="col-md-6 panel panel-default">
+    <div class="col-md-offset-1 panel-default">
+      <h3><%= t "user_courses.add_users_for_course",
+        content: @course.content %></h3>
       <hr/>
-      <p><%= @course.description %></p>
-      <hr/>
-      <% @course.subjects.each do |subject| %>
-        <%= subject.content %>
-        <%= subject.description %>
-        <br>
+      <%= form_for @course,
+        url: supervisor_course_add_user_courses_path(@course) do |f| %>
+        <%= f.collection_check_boxes :user_ids, @users, :id, :name do |b| %>
+          <div class="col-md-offset-1 ">
+            <%= b.label do %>
+              <%= b.check_box + " " + b.text %>
+            <% end %>
+          </div>
+        <% end %>
+        <%= f.submit t(:add_users), class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>

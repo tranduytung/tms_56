@@ -21,7 +21,10 @@ class User < ActiveRecord::Base
   has_many :followers, through: :passive_relationships, source: :follower
 
   enum role: {trainee: 0, supervisor: 1}
-  
+
+  scope :not_add_course, ->course_id {where "id not in (select user_id
+    from user_courses where course_id = ?)", course_id}
+
   def follow other_user
     active_relationships.create followed_id: other_user.id
   end
