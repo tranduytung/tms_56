@@ -10,4 +10,6 @@ class Course < ActiveRecord::Base
   accepts_nested_attributes_for :user_courses, allow_destroy: true
 
   validates :content, presence: true
+  
+  enum status: {ready: 0, started: 1, finished: 2}
 end

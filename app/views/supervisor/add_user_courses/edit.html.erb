@@ -21,22 +21,20 @@
       <hr/>
     </div>
   </div>
-  <div class="col-md-6 panel panel-default">
-    <div class="col-md-offset-1 panel-default">
-      <h3><%= t "user_courses.add_users_for_course",
-        content: @course.content %></h3>
-      <hr/>
-      <%= form_for @course,
-        url: supervisor_course_add_user_courses_path(@course) do |f| %>
-        <%= f.collection_check_boxes :user_ids, @users, :id, :name do |b| %>
-          <div class="col-md-offset-1 ">
-            <%= b.label do %>
-              <%= b.check_box + " " + b.text %>
-            <% end %>
-          </div>
-        <% end %>
-        <%= f.submit t(:add_users), class: "btn btn-primary" %>
+  <div class="col-md-6 col-md-offset-1 panel panel-default">
+    <h3><%= t "user_courses.add_users_for_course",
+      content: @course.content %></h3>
+    <hr/>
+    <%= form_for @course,
+      url: supervisor_course_add_user_courses_path(@course) do |f| %>
+      <%= f.collection_check_boxes :user_ids, @users, :id, :name do |b| %>
+        <div class="col-md-offset-1 ">
+          <%= b.label do %>
+            <%= b.check_box + " " + b.text %>
+          <% end %>
+        </div>
       <% end %>
-    </div>
+      <%= f.submit t(:add_user), class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>

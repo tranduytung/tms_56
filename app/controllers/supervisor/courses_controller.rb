@@ -25,7 +25,7 @@ class Supervisor::CoursesController < ApplicationController
     if @course.update_attributes course_params
       flash[:success] = t "courses.update_success"
       respond_to do |format|
-        format.html {redirect_to supervisor_courses_path}
+        format.html {redirect_to :back}
         format.js
       end
     else
@@ -46,7 +46,7 @@ class Supervisor::CoursesController < ApplicationController
 
   private
   def course_params
-    params.require(:course).permit :content, :description, subject_ids: []
+    params.require(:course).permit :content, :description, :status, subject_ids: []
   end
 
   def load_subjects
