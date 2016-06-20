@@ -1,9 +1,25 @@
 <% provide :submit, t("subject.new_subject") %>
 <div class="row">
+  <div class="col-md-5 panel panel-default">
+    <div class="text-center">
+      <h3><%= link_to t("subject.all_subjects"), "#" %></h3>
+      <hr />
+    </div>
+    <div class="panel-body">
+      <ul class="list-unstyled">
+        <li class="col-md-8">
+          <%= render @subjects if @subjects.any? %>
+        </li>
+      </ul>
+      <div class="text-center">
+        <%= paginate @subjects %>
+      </div>
+    </div>
+  </div>
   <div class="col-md-6 col-md-offset-1 panel panel-default">
     <div class="text-center">
       <h3><%= link_to t("subject.new_subject"), supervisor_subjects_path %></h3>
-      <hr />
+      <hr/>
     </div>
     <%= render "form" %>
   </div>

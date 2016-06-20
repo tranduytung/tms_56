@@ -2,6 +2,7 @@ class Supervisor::SubjectsController < ApplicationController
   load_and_authorize_resource
 
   def index
+    @subjects = @subjects.page(params[:page]).per Settings.subjects.per_page
     subject = Subject.new
     subject.tasks.build
     @subject_form = SubjectForm.new subject
