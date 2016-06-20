@@ -7,6 +7,7 @@ class Course < ActiveRecord::Base
   accepts_nested_attributes_for :course_subjects,
     reject_if: proc {|attributes| attributes[:subject_id].blank?},
     allow_destroy: true
+  accepts_nested_attributes_for :user_courses, allow_destroy: true
 
   validates :content, presence: true
 end

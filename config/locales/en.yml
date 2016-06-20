@@ -35,6 +35,7 @@ en:
   trainee: "Trainee"
   new_trainee: "New Trainee"
   add_user: "Add User"
+  add_users: "Add users"
 
   message:
     you_are_not_supervisor: "You are not a supervisor"
@@ -43,6 +44,9 @@ en:
     cant_edit_user: "You can't edit this user"
     delete_trainee_success: "Delete successful"
     delete_trainee_unsuccess: "Delete unsuccessful"
+    user_course_exits: "User is exits"
+    add_new_user_for_course_success: "Add user for course successful"
+    add_new_user_for_course_unsuccess: "Add user for course unsuccessful"
 
   shared:
     form: "This form contains "
@@ -70,6 +74,7 @@ en:
     all_courses: "All courses"
     user: "user"
     in_course: "in course"
+    add_users_for_course: "Add users for course: %{content}"
     
   object_not_found: "%{object} with id %{id} not found"
   
