@@ -35,7 +35,6 @@ en:
   trainee: "Trainee"
   new_trainee: "New Trainee"
   add_user: "Add User"
-  add_users: "Add users"
 
   message:
     you_are_not_supervisor: "You are not a supervisor"
@@ -44,7 +43,6 @@ en:
     cant_edit_user: "You can't edit this user"
     delete_trainee_success: "Delete successful"
     delete_trainee_unsuccess: "Delete unsuccessful"
-    user_course_exits: "User is exits"
     add_new_user_for_course_success: "Add user for course successful"
     add_new_user_for_course_unsuccess: "Add user for course unsuccessful"
     delete_user_for_course_success: "Delete user for course successful"
@@ -71,19 +69,20 @@ en:
     delete_error: "Failed to delete course"
     update_success: "Course updated"
     update_error: "Failed to update course"
+    started: "This course has been started"
+    start: "Start this course"
     
   user_courses:
     all_courses: "All courses"
     user: "user"
     in_course: "in course"
-    add_users_for_course: "Add users for course: %{content}"
     
   object_not_found: "%{object} with id %{id} not found"
   
   not_authorized: "You are not authorized to access this page"
 
   warning:
-    delete: "You Sure ?"
+    delete: "Are you sure?"
     
   following: "following"
   followers: "followers"

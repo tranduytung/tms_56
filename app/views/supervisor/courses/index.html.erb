@@ -1,27 +1,28 @@
 <%= provide :title, t("courses.all_courses") %>
 
 <div class="row">
-  <div class="col-md-5 panel panel-default">
-    <div class="text-center">
-      <h3><%= t "courses.all_courses" %></h3>
-      <hr />
-    </div>
-    <div class="panel-body">
-      <ul class="list-unstyled">
-        <% @courses.each do |course| %>
-          <div class="col-md-8">
-            <%= link_to course.content, supervisor_course_path(course) %>
-          </div>
-          <div class="col-md-4">
-            <%= link_to t("courses.edit"), edit_supervisor_course_path(course),
-              remote: true %>
-            <%= link_to t("courses.delete"), supervisor_course_path(course),
-              method: :delete, data: {confirm: t("courses.confirm")} %>
-          </div>
-        <% end %>
-      </ul>
+  <div class="col-md-5">
+    <div class="panel panel-default">
       <div class="text-center">
-        <%= paginate @courses %>
+        <h3><%= t "courses.all_courses" %></h3><hr>
+      </div>
+      <div class="panel-body">
+        <ul class="list-unstyled">
+          <% @courses.each do |course| %>
+            <div class="col-md-8">
+              <%= link_to course.content, supervisor_course_path(course) %>
+            </div>
+            <div class="col-md-4">
+              <%= link_to t("courses.edit"), edit_supervisor_course_path(course),
+                remote: true %>
+              <%= link_to t("courses.delete"), supervisor_course_path(course),
+                method: :delete, data: {confirm: t("courses.confirm")} %>
+            </div>
+          <% end %>
+        </ul>
+        <div class="text-center">
+          <%= paginate @courses %>
+        </div>
       </div>
     </div>
   </div>
