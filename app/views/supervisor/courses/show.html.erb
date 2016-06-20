@@ -11,13 +11,16 @@
         <% end %>
       </div>
       <ul class="list-unstyled">
-        <% @course.users.each do |user| %>
+        <% @course.user_courses.each do |user_course| %>
           <div class="input-group fields">
             <div class="form-control">
-              <span><%= link_to user.name, "#" %></span>
+              <span><%= link_to user_course.user.name, "#" %></span>
             </div>
             <span class="input-group-addon">
-              <%= link_to t(:remove), "#" %>
+              <%= link_to [:supervisor, user_course], method: :delete,
+                data: {confirm: t("warning.delete")} do %>
+                <% t :remove %>
+              <% end %>
             </span>
           </div>
         <% end %>

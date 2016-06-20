@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :courses, only: :show do
       resource :add_user_courses, only: [:edit, :update]
     end
+    resources :user_courses, only: :destroy
     resources :users
     resources :subjects, only:[:index, :create]
   end

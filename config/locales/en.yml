@@ -47,6 +47,8 @@ en:
     user_course_exits: "User is exits"
     add_new_user_for_course_success: "Add user for course successful"
     add_new_user_for_course_unsuccess: "Add user for course unsuccessful"
+    delete_user_for_course_success: "Delete user for course successful"
+    delete_user_for_course_unsuccess: "Delete user for course unsuccessful"
 
   shared:
     form: "This form contains "
