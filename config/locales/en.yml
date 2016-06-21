@@ -121,6 +121,7 @@ en:
     description: "description"
     add_more_task: "Add more Task"
     existing_task_cant_be_blank: "existing can't be blank"
+    task: "Task"
 
   not_learn: "Not Learned"
   learning: "Learning"
