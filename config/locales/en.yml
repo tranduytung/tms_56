@@ -115,6 +115,11 @@ en:
     submit: "Submit"
     form: "Subject Form"
     back: "Back to all subjects"
+    confirm: "You Sure?"
+    delete: "Delete"
+    edit: "Edit"
+    destroy_success: "Successfully destroy subject"
+    destroy_fail: "Failed destroy subject"
   
   task: 
     content: "content"

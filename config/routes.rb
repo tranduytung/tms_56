@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     end
     resources :user_courses, only: :destroy
     resources :users
-    resources :subjects, except:[:new, :destroy]
+    resources :subjects, except:[:new]
   end
   
   resources :courses, only: [:show]
