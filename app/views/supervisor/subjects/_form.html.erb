@@ -10,8 +10,8 @@
   <%= f.fields_for :tasks do |task| %>
     <%= render "task_fields", f: task %>
   <% end %>
-  <%= link_to_add_fields t("add_more_task"), f, :tasks %>
+  <%= link_to_add_fields t("task.add_more_task"), f, :tasks %>
   <br/>
-  <%= f.submit yield(:submit),
+  <%= f.submit t("subject.submit"),
     class: "btn btn-primary col-md-4 col-md-offset-4" %>
 <% end %>

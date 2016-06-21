@@ -1,4 +1,3 @@
-<% provide :submit, t("subject.new_subject") %>
 <div class="row">
   <div class="col-md-5 panel panel-default">
     <div class="text-center">
@@ -18,9 +17,11 @@
   </div>
   <div class="col-md-6 col-md-offset-1 panel panel-default">
     <div class="text-center">
-      <h3><%= link_to t("subject.new_subject"), supervisor_subjects_path %></h3>
+      <h3><%= link_to t("subject.form"), supervisor_subjects_path %></h3>
       <hr/>
     </div>
-    <%= render "form" %>
+    <div id="subject-form">
+      <%= render "form" %>
+    </div>
   </div>
 </div>

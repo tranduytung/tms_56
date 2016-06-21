@@ -105,12 +105,19 @@ en:
     description: "description"
     tasks: "Tasks"
     submit: "Create subject"
-    add_success: "Success add subject"
+    add_success: "Successfully add subject"
     add_fail: "Failed add subject"
     add_subject: "Add Subject"
     please_add: "Please add a subject"
-
+    edit_success: "Successfully edit subject"
+    edit_fail: "Failed edit subject"
+    edit_subject: "Changes Subject"
+    submit: "Submit"
+    form: "Subject Form"
+    back: "Back to all subjects"
+  
   task: 
     content: "content"
     description: "description"
     add_more_task: "Add more Task"
+    existing_task_cant_be_blank: "existing can't be blank"
