@@ -3,25 +3,45 @@
   <div class="col-md-6">
     <div class="panel panel-default text-center">
       <h3><%= @course.content %></h3><hr>
-      <p><%= @course.description %></p><hr>
-      <% if @course.started? %>
-        <strong><%= t "courses.started" %></strong>
-      <% else %>
-        <%= form_for [:supervisor, @course] do |f| %>
-          <%= f.hidden_field :status, value: :started %>
-          <%= f.submit t("courses.start"), class: "btn btn-primary" %>
+      <ul class="list-unstyled">
+        <%= @course.description %><hr>
+        <% if @course.subjects.any? && @course.users.any? %>
+          <% if @course.ready? %>
+            <%= form_for [:supervisor, @course] do |f| %>
+              <%= f.hidden_field :status, value: :started %>
+              <%= f.submit t("courses.start"), class: "btn btn-primary" %>
+            <% end %>
+          <% elsif @course.started? %>
+            <strong><%= t "courses.started" %></strong><hr>
+            <%= form_for [:supervisor, @course] do |f| %>
+              <%= f.hidden_field :status, value: :finished %>
+              <%= f.submit t("courses.finish"), class: "btn btn-primary" %>
+            <% end %>
+          <% elsif @course.finished? %>
+            <strong><%= t "courses.finished" %></strong>
+          <% end %>
+        <% else %>
+          <%= t "courses.not_ready" %>
         <% end %>
-      <% end %>
+      </ul>
     </div>
     
     <div class="panel panel-default text-center">
       <h3><%= t "courses.subjects" %></h3><hr>
       <ul class="list-unstyled">
-      <% @course.subjects.each do |subject| %>
-        <li>
-          <%= subject.content %>
-          <%= subject.description %>
-        </li>
+      <% if @course.subjects.any? %>
+        <% @course.subjects.each do |subject| %>
+          <li>
+            <%= subject.content %>
+            <%= subject.description %>
+          </li>
+        <% end %>
+      <% else %>
+        <%= t "subject.please_add" %><hr>
+        <div><%= link_to supervisor_courses_path,
+          class: "btn btn-primary" do %>
+          <span><%= t "subject.add_subject" %></span>
+        <% end %></div>
       <% end %>
     </div>
   </div>
@@ -29,26 +49,31 @@
   <div class="col-md-6">
     <div class="panel panel-default text-center">
       <h3><%= t :all_trainee %></h3><hr>
-      <div class="center">
-        <%= link_to edit_supervisor_course_add_user_courses_path(@course),
-          class: "btn btn-info" do %>
-          <span><%= t :add_user %></span>
-        <% end %>
-      </div>
       <ul class="list-unstyled">
-        <% @course.user_courses.each do |user_course| %>
-          <div class="input-group fields">
-            <div class="form-control">
-              <span><%= link_to user_course.user.name, "#" %></span>
+        <% if @course.user_courses.any? %>
+          <% @course.user_courses.each do |user_course| %>
+            <div class="input-group fields">
+              <div class="form-control">
+                <span><%= link_to user_course.user.name, "#" %></span>
+              </div>
+              <span class="input-group-addon">
+                <%= link_to [:supervisor, user_course], method: :delete,
+                  data: {confirm: t("warning.delete")} do %>
+                  <% t :remove %>
+                <% end %>
+              </span>
             </div>
-            <span class="input-group-addon">
-              <%= link_to [:supervisor, user_course], method: :delete,
-                data: {confirm: t("warning.delete")} do %>
-                <% t :remove %>
-              <% end %>
-            </span>
-          </div>
+          <% end %>
+        <% else %>
+          <%= t "user_courses.please_add" %>
         <% end %>
+        <hr>
+        <div class="center">
+          <%= link_to edit_supervisor_course_add_user_courses_path(@course),
+            class: "btn btn-primary" do %>
+            <span><%= t "user_courses.add_trainees" %></span>
+          <% end %>
+        </div>
       </ul>
     </div>
   </div>
