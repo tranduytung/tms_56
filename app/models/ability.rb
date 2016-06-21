@@ -16,6 +16,7 @@ class Ability
       else
         can :read, Course
         can :read, Subject
+        can :read, Task
         can :read, UserCourse, user_id: user.id
         can :read, User do |other_user|
           other_user.trainee?

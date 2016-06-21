@@ -18,24 +18,17 @@
         <div class="panel panel-default">
           <div class=" row">
             <div class="panel-heading"><h3><%= t "task.task" %></h3></div>
-            <hr>
-            <div class="col-md-6">
-              <strong><h4><p><%= t "task.content" %></p></h4></strong>
-            </div>
-            <div class="col-md-6">
-              <strong><h4><p><%= t "task.description" %></p></h4></strong>
-            </div>
           </div>
           <hr>
           <div class="row">
             <% if @subject.tasks.any? %>
               <% @subject.tasks.each do |task| %>
-                <div class="col-md-6">
-                  <p><%= task.content %></p>
-                </div>
-                <div class="col-md-6">
-                  <p><%= task.description %></p>
-                </div>
+                <li>
+                  <%= link_to course_subject_task_path(@course, @subject, task),
+                    class: "btn btn-lg btn-default" do %>
+                    <%= t "task.task" %> : <%= task.content %>
+                  <% end %>
+                </li>
               <% end %>
             <% end %>
           </div>

@@ -1,0 +1,28 @@
+<%= provide :title, @subject.content %>
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default text-center">
+      <h3><%= @subject.content %></h3>
+      <hr/>
+      <ul class="list-unstyled">
+        <h4><%= t "description" %></h4>
+        <br>
+        <%= @subject.description %>
+        <hr>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default text-center">
+      <h3><%= @task.content %></h3>
+      <hr/>
+      <ul class="list-unstyled">
+        <h4><%= t "description" %></h4>
+        <br>
+        <%= @task.description %>
+        <hr>
+      </ul>
+      <hr/>
+    </div>
+  </div>
+</div>
