@@ -10,7 +10,7 @@
       <ul class="list-inline">
         <% @course.subjects.each do |subject| %>
           <li>
-            <%= link_to subject.content, "#",
+            <%= link_to subject.content, course_subject_path(@course, subject),
               class: "btn btn-lg btn-default" %>
           </li>
         <% end %>

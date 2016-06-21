@@ -18,7 +18,9 @@ Rails.application.routes.draw do
     resources :subjects, except:[:new]
   end
   
-  resources :courses, only: [:show]
+  resources :courses, only: [:show] do
+    resources :subjects, only: [:show]
+  end
   resources :user_courses, only: [:index]
 
   resources :users, only: [:show]
