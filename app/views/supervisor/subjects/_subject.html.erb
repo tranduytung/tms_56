@@ -1,5 +1,5 @@
 <h3>
-  <%= link_to subject.content, "#" %>
+  <%= link_to subject.content, supervisor_subject_path(subject) %>
 </h3>
   <%= link_to t("subject.edit"), edit_supervisor_subject_path(subject) %>
   <%= link_to t("subject.delete"), "#" %>

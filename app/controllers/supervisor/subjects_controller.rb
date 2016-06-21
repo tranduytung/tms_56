@@ -9,6 +9,9 @@ class Supervisor::SubjectsController < ApplicationController
     @subject_form = SubjectForm.new subject
   end
 
+  def show
+  end
+
   def create
     @subject = Subject.new
     params[:subject][:tasks_attributes].each do |_, value|
