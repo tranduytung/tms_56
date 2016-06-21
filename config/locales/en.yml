@@ -74,7 +74,15 @@ en:
     finish: "Close this course"
     finished: "This course has been closed"
     not_ready: "Course not ready"
-    
+    please_start: "Please start course first"
+
+  course_subjects:
+    start: "Start"
+    in_progress: "In Progress"
+    finished: "Finished"
+    start_success: "Subject started"
+    start_error: "Failed to start subject"
+
   user_courses:
     all_courses: "All courses"
     user: "user"
