@@ -20,6 +20,7 @@ class Ability
         can :read, User do |other_user|
           other_user.trainee?
         end
+        can :create, UserCourse, user_id: user.id
       end
     end
   end

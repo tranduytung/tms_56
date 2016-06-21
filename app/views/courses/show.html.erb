@@ -1,5 +1,15 @@
 <%= provide :title, @course.content %>
 <h3><%= @course.content %></h3>
+<% unless @user_course.nil? %>
+  <%= form_for [current_user, @user_course] do |f| %>
+    <%= f.hidden_field :course_id, value: @course.id %>
+    <%= f.submit t("courses.join"), class: "btn btn-primary" %>
+  <% end %>
+<% else %>
+  <div class="alert alert-info">
+    <%= t "courses.joined" %>
+  </div>
+<% end %>
 <div class="row">
   <div class="col-md-7">
     <div class="panel panel-default">

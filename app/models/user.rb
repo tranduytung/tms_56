@@ -40,4 +40,9 @@ class User < ActiveRecord::Base
   def password_required?
     new_record? ? super : false
   end
+
+  def check_user_course_exits course
+    @user_course = self.user_courses.find_by course_id: course.id
+    !@user_course.nil?
+  end
 end

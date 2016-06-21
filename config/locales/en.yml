@@ -47,6 +47,8 @@ en:
     add_new_user_for_course_unsuccess: "Add user for course unsuccessful"
     delete_user_for_course_success: "Delete user for course successful"
     delete_user_for_course_unsuccess: "Delete user for course unsuccessful"
+    join_a_course_success: "Join this course successful"
+    join_a_course_unsuccess: "Join this course unsuccessful"
 
   shared:
     form: "This form contains "
@@ -74,6 +76,8 @@ en:
     finish: "Close this course"
     finished: "This course has been closed"
     not_ready: "Course not ready"
+    join: "Join this course"
+    joined: "Joined this course"
     
   user_courses:
     all_courses: "All courses"
