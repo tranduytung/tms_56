@@ -78,10 +78,14 @@ en:
 
   course_subjects:
     start: "Start"
-    in_progress: "In Progress"
+    finish: "Finish"
     finished: "Finished"
     start_success: "Subject started"
     start_error: "Failed to start subject"
+    content: "Content"
+    status: "Status"
+    action: "Action"
+    not_available: "Not Available"
 
   user_courses:
     all_courses: "All courses"
@@ -90,6 +94,8 @@ en:
     please_add: "Please add a trainee"
     add_trainees: "Add Trainees"
     submit: "Submit"
+    trainee_list_hint: "Hint: Trainee list can only be modified if the course hasn't been started"
+    trainee_list_locked: "Trainee list locked"
     
   object_not_found: "%{object} with id %{id} not found"
   
