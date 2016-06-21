@@ -69,13 +69,19 @@ en:
     delete_error: "Failed to delete course"
     update_success: "Course updated"
     update_error: "Failed to update course"
-    started: "This course has been started"
     start: "Start this course"
+    started: "This course has been started"
+    finish: "Close this course"
+    finished: "This course has been closed"
+    not_ready: "Course not ready"
     
   user_courses:
     all_courses: "All courses"
     user: "user"
     in_course: "in course"
+    please_add: "Please add a trainee"
+    add_trainees: "Add Trainees"
+    submit: "Submit"
     
   object_not_found: "%{object} with id %{id} not found"
   
@@ -101,7 +107,9 @@ en:
     submit: "Create subject"
     add_success: "Success add subject"
     add_fail: "Failed add subject"
-  
+    add_subject: "Add Subject"
+    please_add: "Please add a subject"
+
   task: 
     content: "content"
     description: "description"
