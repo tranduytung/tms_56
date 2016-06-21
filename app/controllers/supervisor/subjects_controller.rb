@@ -42,6 +42,15 @@ class Supervisor::SubjectsController < ApplicationController
       render :edit
     end
   end
+  
+  def destroy
+    if @subject.destroy
+      flash[:success] = t "subject.destroy_success"
+    else
+      flash[:danger] = t "subject.destroy_fail"
+    end
+    redirect_to supervisor_subjects_path
+  end
 
   private
   def subject_params
