@@ -53,11 +53,11 @@
                     <%= form_for [:supervisor, course_subject], method: :patch do |f| %>
                       <% if @course.started? %>
                         <% if course_subject.ready? %>
-                          <%= f.hidden_field :status, value: :started %>
+                          <%= f.hidden_field :status, value: :training %>
                           <%= f.submit t("course_subjects.start"), class:
                             "btn btn-primary" %>
-                        <% elsif course_subject.started? %>
-                          <%= f.hidden_field :status, value: :finished %>
+                        <% elsif course_subject.training? %>
+                          <%= f.hidden_field :status, value: :finish %>
                           <%= f.submit t("course_subjects.finish"), class:
                             "btn btn-primary" %>
                         <% end %>
