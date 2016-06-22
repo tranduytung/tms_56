@@ -7,5 +7,6 @@ class UserCoursesController < ApplicationController
   def show
     @user_courses = @user_course.course.user_courses.page(params[:page]).
       per Settings.courses.per_page
+    @activities = PublicActivity::Activity.course @user_course.course
   end
 end

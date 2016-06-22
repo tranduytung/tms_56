@@ -13,3 +13,6 @@ courses:
   per_page: 10
 subjects:
   per_page: 5
+activity:
+  course: "Course"
+  course_subject: "CourseSubject"

@@ -154,12 +154,15 @@ en:
   not_learn: "Not Learned"
   learning: "Learning"
   finish: "Finish"
-  
-  activity:
-    following: "folowing"
-    unfollow: "unfollow"
-    course:
-      started: "started"
-      finished: "finished"
 
   hide: :Hide
+  activity:
+    following: "Folowing"
+    unfollow: "Unfollow"
+    started: "Started"
+    finished: "Finished"
+    status: "All status"
+    course: "Course"
+    subject: "Subject"
+    course_had_been: "course has been"
+    subject_had_been: "subject has been"

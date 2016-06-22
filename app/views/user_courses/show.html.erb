@@ -1,7 +1,7 @@
 <%= provide :title, @user_course.course.content %>
 <h3><%= @user_course.course.content %></h3>
 <div class="row">
-  <div class="col-md-7">
+  <div class="col-md-4">
     <div class="panel panel-default">
       <h3><%= t "courses.description" %></h3>
       <p><%= @user_course.course.description %></p>
@@ -18,7 +18,7 @@
       </ul>
     </div>
   </div>
-  <div class="col-md-5">
+  <div class="col-md-4">
     <div class="panel panel-default">
       <h3><%= t :all_users %></h3>
       <ul class="list-unstyled">
@@ -36,6 +36,27 @@
         <% end %>
       </ul>
       <%= paginate @user_courses %>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <h3><%= t "activity.status" %></h3><br/>
+      <ul class="list-unstyled">
+        <% if @activities.any? %>
+          <% @activities.each do |activity| %>
+            <li>
+              <% if activity.owner.supervisor? %>
+                <%= activity.owner.name %>
+              <% else %>
+                <%= link_to activity.owner.name, activity.owner %>
+              <% end %>
+              <%= activity.key %>
+              <%= activity.trackable.class %>
+              <%= activity.trackable.content %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
