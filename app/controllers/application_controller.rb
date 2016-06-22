@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   include PublicActivity::StoreController
+  helper_method :current_user
+  hide_action :current_user
 
   rescue_from CanCan::AccessDenied do |exception|
     flash[:danger] = t "not_authorized"

@@ -20,12 +20,14 @@ class Course < ActiveRecord::Base
 
   def activity
     if started?
+      create_activity key: I18n.t("activity.started"), recipient: self
       users.each do |user|
-        create_activity key: I18n.t("activity.course.started"), owner: user
+        create_activity key: I18n.t("activity.started"), owner: user
       end
-    elsif self.finished?
+    elsif finished?
+      create_activity key: I18n.t("activity.finished"), recipient: self
       users.each do |user|
-        create_activity key: I18n.t("activity.course.finished"), owner: user
+        create_activity key: I18n.t("activity.finished"), owner: user
       end
     end
   end
