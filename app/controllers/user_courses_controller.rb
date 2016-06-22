@@ -3,4 +3,9 @@ class UserCoursesController < ApplicationController
   
   def index
   end
+
+  def show
+    @user_courses = @user_course.course.user_courses.page(params[:page]).
+      per Settings.courses.per_page
+  end
 end

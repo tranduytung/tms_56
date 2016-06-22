@@ -7,7 +7,7 @@ class CourseSubject < ActiveRecord::Base
   delegate :content, :description, to: :subject, prefix: true
   delegate :content, :description, to: :course, prefix: true
   
-  enum status: {ready: 0, started: 1, finished: 2}
+  enum status: {start: 0, training: 1, finish: 2}
 
   include PublicActivity::Model
   tracked

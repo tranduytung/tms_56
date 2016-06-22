@@ -96,6 +96,9 @@ en:
     submit: "Submit"
     trainee_list_hint: "Hint: Trainee list can only be modified if the course hasn't been started"
     trainee_list_locked: "Trainee list locked"
+    start: "Start"
+    training: "Training"
+    finish: "Finish"
     
   object_not_found: "%{object} with id %{id} not found"
   
@@ -134,6 +137,9 @@ en:
     edit: "Edit"
     destroy_success: "Successfully destroy subject"
     destroy_fail: "Failed destroy subject"
+    start: "Start"
+    training: "Training"
+    finish: "Finish"
   
   task: 
     content: "content"
@@ -141,6 +147,9 @@ en:
     add_more_task: "Add more Task"
     existing_task_cant_be_blank: "existing can't be blank"
     task: "Task"
+    start: "Start"
+    training: "Training"
+    finish: "Finish"
 
   not_learn: "Not Learned"
   learning: "Learning"
@@ -152,3 +161,5 @@ en:
     course:
       started: "started"
       finished: "finished"
+
+  hide: :Hide

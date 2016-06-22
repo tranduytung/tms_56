@@ -6,7 +6,7 @@
   <ul class="list-inline">
     <% @user_courses.each do |user_course| %>
       <li>
-        <%= link_to user_course.course.content, user_course.course,
+        <%= link_to user_course.course.content, user_course,
           class: "btn btn-lg btn-default" %>
       </li>
     <% end %>
