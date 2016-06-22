@@ -21,14 +21,6 @@ end
   Course.create! content: "Training-#{n+1}", description: "Traning course"
 end
 
-users = User.order(:created_at).take(5)
-courses = Course.order(:created_at)
-users.each do |user|
-  courses.take(rand(Course.count) + 1).each do |course|
-    user.user_courses.create! course_id: course.id
-  end
-end
-
 5.times do |n|
   Subject.create! content: "Subject-#{n+1}"
 end
@@ -42,3 +34,11 @@ following = users[2..10]
 followers = users[3..5]
 following.each{|followed| user.follow(followed)}
 followers.each{|follower| follower.follow(user)}
+
+users = User.order(:created_at).take(5)
+courses = Course.order(:created_at)
+users.each do |user|
+  courses.take(rand(Course.count) + 1).each do |course|
+    user.user_courses.create! course_id: course.id
+  end
+end
