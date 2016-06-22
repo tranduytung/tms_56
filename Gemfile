@@ -16,6 +16,7 @@ gem "config"
 gem "cancancan"
 gem "reform"
 gem "reform-rails"
+gem "public_activity"
 
 group :development, :test do
   gem "byebug"
