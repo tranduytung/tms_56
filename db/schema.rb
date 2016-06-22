@@ -80,24 +80,26 @@ ActiveRecord::Schema.define(version: 20160621093345) do
 
   create_table "trainee_subjects", force: :cascade do |t|
     t.integer  "user_id"
+    t.integer  "user_course_id"
     t.integer  "course_subject_id"
     t.integer  "subject_id"
-    t.integer  "status"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.integer  "status",            default: 0
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   add_index "trainee_subjects", ["course_subject_id"], name: "index_trainee_subjects_on_course_subject_id"
   add_index "trainee_subjects", ["subject_id"], name: "index_trainee_subjects_on_subject_id"
+  add_index "trainee_subjects", ["user_course_id"], name: "index_trainee_subjects_on_user_course_id"
   add_index "trainee_subjects", ["user_id"], name: "index_trainee_subjects_on_user_id"
 
   create_table "trainee_tasks", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "trainee_subject_id"
     t.integer  "task_id"
-    t.integer  "status"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.integer  "status",             default: 0
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   add_index "trainee_tasks", ["task_id"], name: "index_trainee_tasks_on_task_id"
