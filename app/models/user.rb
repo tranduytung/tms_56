@@ -25,6 +25,9 @@ class User < ActiveRecord::Base
   scope :not_add_course, ->course_id {where "id not in (select user_id
     from user_courses where course_id = ?)", course_id}
 
+  include PublicActivity::Model
+  tracked
+
   def follow other_user
     active_relationships.create followed_id: other_user.id
   end

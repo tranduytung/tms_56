@@ -145,3 +145,10 @@ en:
   not_learn: "Not Learned"
   learning: "Learning"
   finish: "Finish"
+  
+  activity:
+    following: "folowing"
+    unfollow: "unfollow"
+    course:
+      started: "started"
+      finished: "finished"
