@@ -171,6 +171,7 @@ en:
     you: "You"
     my_activities: "My Activity"
     all_activities: "All Activity"
+    activities: "Activity"
 
   search:
     courses:

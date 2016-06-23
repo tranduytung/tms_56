@@ -1,0 +1,26 @@
+<% provide :title, t(:user_show) %>
+<div class="row">
+  <div class="col-md-4">
+    <section class="user_info">
+      <%= render @user %>
+    </section>
+    <section class="stats">
+      <%= render "shared/stats" %>
+    </section>
+  </div>
+  <div class="col-md-6">
+      <div class="panel panel-default">
+        <h3><%= t "activity.activities" %></h3><br/>
+        <ul class="list-unstyled">
+          <% if @activities.any? %>
+            <% @activities.each do |activity| %>
+              <%= render "public_activity/activities/activity",
+                activity: activity %>
+              <% end %>
+            <%= paginate @activities %>
+          <% end %>
+          <hr/>
+        </ul>
+      </div>
+</div>
+</div>

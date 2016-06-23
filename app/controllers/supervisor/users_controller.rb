@@ -6,6 +6,12 @@ class Supervisor::UsersController < ApplicationController
     @users = @users.trainee.page params[:page]
   end
 
+  def show
+    @activities = PublicActivity::Activity
+      .user(@user).by_day(Date.today)
+      .page(params[:page]).per Settings.activity.per_page
+  end
+
   def new
   end
 

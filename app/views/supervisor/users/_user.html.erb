@@ -1,6 +1,6 @@
 <li>
   <%= gravatar_for user %>
-  <%= link_to user.name, "#" %>
+  <%= link_to user.name, supervisor_user_path(user) %>
   <%= link_to t(:edit_trainee), edit_supervisor_user_path(user) %>
   <%= link_to supervisor_user_path(user), method: :delete,
     data: {confirm: t("warning.delete")} do %>
