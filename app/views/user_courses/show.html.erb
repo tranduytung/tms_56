@@ -40,42 +40,22 @@
   </div>
   <div class="col-md-4">
     <div class="panel panel-default">
-      <h3><%= t "activity.status" %></h3><br/>
+      <h3><%= t "activity.all_activities" %></h3><br/>
       <ul class="list-unstyled">
         <% if @activities.any? %>
-          <% @activities.each do |activity| %>
-            <li>
-              <% if activity.owner.supervisor? %>
-                <%= activity.owner.name %>
-              <% else %>
-                <%= link_to activity.owner.name, activity.owner %>
-              <% end %>
-              <%= activity.key %>
-              <% if is_course? activity.trackable.class %>
-                <%= activity.trackable.class %>
-                <%= activity.trackable.content %>
-              <% elsif is_course_subject? activity.trackable.class %>
-                <%= activity.trackable.subject.class %>
-                <% if activity.trackable.present? %>
-                  <%= activity.trackable.subject.content %>
-                <% else %>
-                  <%= activity.trackable_id %>:
-                  <strong><%= t "activity.had_deleted" %></strong>
-                <% end %>
-              <% end %>
-            </li>
-          <% end %>
+          <%= render @activities %>
           <%= paginate @activities %>
         <% end %>
         <hr/>
-        <div class="text-center">
-          <%= link_to user_course_path @user_course, action_type: @bottom do %>
-            <div class="btn btn-primary">
-              <%= @bottom %>
-            </div>
-          <% end %>
-        </div>
       </ul>
+      <div class="text-center">
+        <%= link_to user_course_path @user_course, action_type: @bottom do %>
+          <div class="btn btn-primary">
+            <%= @bottom %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
+

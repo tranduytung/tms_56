@@ -4,4 +4,5 @@ PublicActivity::Activity.class_eval do
   scope :user, -> (user_id) {where(owner_id: user_id, owner_type: "User")}
   scope :course_subject, -> (course_subject_id) {where(
     trackable_type: "CourseSubject", trackable_id: course_subject_id)}
+  scope :by_day, -> (day) {where("DATE(created_at) = ?", day)}
 end
