@@ -1,0 +1,25 @@
+<li>
+  <% if activity.owner.supervisor? %>
+    <%= activity.owner.name %>
+  <% elsif current_user? activity.owner %>
+    <%= t "activity.you" %>
+  <% else %>
+    <%= link_to activity.owner.name, activity.owner %>
+  <% end %>
+
+  <%= activity.key %>
+  
+  <% if activity.trackable.nil? %>
+    <%= activity.trackable_type %>
+    <%= activity.trackable_id %>
+    <strong><%= t "activity.had_deleted" %></strong>
+  <% else %>
+    <% if is_course? activity.trackable_type %>
+      <%= activity.trackable.class %>
+      <%= activity.trackable.content %>
+    <% elsif is_course_subject? activity.trackable_type %>
+      <%= activity.trackable.subject.class %>
+      <%= activity.trackable.subject.content %>
+    <% end %>
+  <% end %>
+</li>
