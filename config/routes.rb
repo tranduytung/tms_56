@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :user_courses, only: :destroy
     resources :users
     resources :subjects, except:[:new]
+    resources :searchs, only: :index
   end
   
   resources :user_courses, only: [:index, :show]
@@ -27,4 +28,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index] do 
     resources :relationships, only: [:index]
   end
+  resources :searchs, only: :index
 end

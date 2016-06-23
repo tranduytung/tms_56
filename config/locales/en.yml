@@ -75,6 +75,7 @@ en:
     finished: "This course has been closed"
     not_ready: "Course not ready"
     please_start: "Please start course first"
+    find: "Find Course"
 
   course_subjects:
     start: "Start"
@@ -170,3 +171,12 @@ en:
     you: "You"
     my_activities: "My Activity"
     all_activities: "All Activity"
+
+  search:
+    courses:
+      search_course: "Search Course"
+      content: "Course Content"
+      form_day: "Form Day"
+      to_day: "To Day"
+      subject_content: "Subject Content"
+      day: "Day"
