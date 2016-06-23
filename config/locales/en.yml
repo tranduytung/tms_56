@@ -80,8 +80,8 @@ en:
     start: "Start"
     finish: "Finish"
     finished: "Finished"
-    start_success: "Subject started"
-    start_error: "Failed to start subject"
+    start_success: "Subject updated"
+    start_error: "Failed to update subject"
     content: "Content"
     status: "Status"
     action: "Action"
@@ -96,9 +96,29 @@ en:
     submit: "Submit"
     trainee_list_hint: "Hint: Trainee list can only be modified if the course hasn't been started"
     trainee_list_locked: "Trainee list locked"
-    start: "Start"
-    training: "Training"
-    finish: "Finish"
+    status: "Status: "
+    start: "Preparing"
+    training: "Started"
+    finish: "Finished"
+    go_to_subject: "Go"
+
+  trainee_subjects:
+    submit_tasks: "Finish tasks"
+    task_finished: "Task finished"
+    status_is: "Status: "
+    status:
+      start: "Preparing"
+      training: "In Progress"
+      finish: "Finished"
+    gratz: "Congratulations! You have finished the subject!"
+    go_back: "Go back to course page"
+    no_tasks: "There isn't any task"
+    subject_not_started: "This subject hasn't been started"
+    subject_finished: "This subject has finished"
+    course_not_started: "This course hasn't been started"
+    course_finished: "This course has finished"
+    finish_task_success: "Finished task successfully"
+    finish_task_error: "Failed to finish task"
     
   object_not_found: "%{object} with id %{id} not found"
   
@@ -137,9 +157,6 @@ en:
     edit: "Edit"
     destroy_success: "Successfully destroy subject"
     destroy_fail: "Failed destroy subject"
-    start: "Start"
-    training: "Training"
-    finish: "Finish"
   
   task: 
     content: "content"
@@ -147,15 +164,11 @@ en:
     add_more_task: "Add more Task"
     existing_task_cant_be_blank: "existing can't be blank"
     task: "Task"
-    start: "Start"
-    training: "Training"
-    finish: "Finish"
 
   not_learn: "Not Learned"
   learning: "Learning"
   finish: "Finish"
-
-  hide: :Hide
+  
   activity:
     following: "Folowing"
     unfollow: "Unfollow"

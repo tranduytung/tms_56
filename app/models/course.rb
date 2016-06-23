@@ -18,6 +18,14 @@ class Course < ActiveRecord::Base
   
   after_update :create_course_activity
 
+  def build_course_subjects subjects = {}
+    Subject.all.each do |subject|
+      unless subjects.include? subject
+        self.course_subjects.build subject_id: subject.id
+      end
+    end
+  end
+
   private
   def create_course_activity
     if started?

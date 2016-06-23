@@ -1,13 +1,17 @@
 class Supervisor::CoursesController < ApplicationController
   load_and_authorize_resource
-  before_action :load_subjects, except: [:new, :show, :destroy]
 
   def index
     @courses = @courses.page(params[:page]).per Settings.courses.per_page
     @course = Course.new
+    @course.build_course_subjects @course.subjects
   end
 
   def show
+  end
+
+  def edit
+    @course.build_course_subjects @course.subjects
   end
 
   def create
@@ -46,10 +50,7 @@ class Supervisor::CoursesController < ApplicationController
 
   private
   def course_params
-    params.require(:course).permit :content, :description, :status, subject_ids: []
-  end
-
-  def load_subjects
-    @subjects = Subject.all.page(params[:subject_page]).per Settings.courses.per_page
+    params.require(:course).permit :content, :description, :status,
+      course_subjects_attributes: [:id, :subject_id, :course_id, :status, :_destroy]
   end
 end
