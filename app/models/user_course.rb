@@ -10,6 +10,19 @@ class UserCourse < ActiveRecord::Base
   after_create :send_mail_assign
   before_destroy :send_mail_delete
 
+  def update_status
+    subject_count = course.subjects.count
+    finished_subject_count = trainee_subjects.
+      select {|ts| ts.finished?}.count
+    if subject_count == 0 || finished_subject_count <= 0
+      self.update_columns status: 0
+    elsif finished_subject_count < subject_count
+      self.update_columns status: 1
+    else
+      self.update_columns status: 2
+    end
+  end
+
   private
   def send_mail_assign
     UserMailer.assign_to_course(user, course).deliver_later

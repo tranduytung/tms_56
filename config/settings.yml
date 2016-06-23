@@ -18,8 +18,17 @@ activity:
   subject: "Subject"
   task: "Task"
   user: "User"
-  per_page: 5
+  course_subject: "CourseSubject"
+  per_page: 10
   all_activities: "all_activities"
   my_activities: "my_activities"
+  pagination:
+    window: 2
+trainee_subjects:
+  zero: 0
+  all: 100
+user_courses:
+  zero: 0
+  all: 100
 mail_from: "admin@example.com"
 layout: "mailer"

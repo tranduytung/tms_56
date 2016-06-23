@@ -15,6 +15,7 @@ class TraineeSubjectsController < ApplicationController
   def update
     if @trainee_subject.update_attributes trainee_subject_params
       @trainee_subject.update_status
+      @trainee_subject.user_course.update_status
       flash[:success] = t "trainee_subjects.finish_task_success"
     else
       flash[:danger] = t "trainee_subjects.finish_task_error"
