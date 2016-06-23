@@ -51,11 +51,25 @@
                 <%= link_to activity.owner.name, activity.owner %>
               <% end %>
               <%= activity.key %>
-              <%= activity.trackable.class %>
-              <%= activity.trackable.content %>
+              <% if is_course? activity.trackable.class %>
+                <%= activity.trackable.class %>
+                <%= activity.trackable.content %>
+              <% elsif is_course_subject? activity.trackable.class %>
+                <%= activity.trackable.subject.class %>
+                <%= activity.trackable.subject.content %>
+              <% end %>
             </li>
           <% end %>
+          <%= paginate @activities %>
         <% end %>
+        <hr/>
+        <div class="text-center">
+          <%= link_to user_course_path @user_course, action_type: @bottom do %>
+            <div class="btn btn-primary">
+              <%= @bottom %>
+            </div>
+          <% end %>
+        </div>
       </ul>
     </div>
   </div>

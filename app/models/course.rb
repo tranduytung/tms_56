@@ -14,7 +14,7 @@ class Course < ActiveRecord::Base
   enum status: {ready: 0, started: 1, finished: 2}
 
   include PublicActivity::Model
-  tracked
+  tracked owner: Proc.new{|controller, model| controller.current_user}
   
   after_update :activity
 
@@ -22,12 +22,14 @@ class Course < ActiveRecord::Base
     if started?
       create_activity key: I18n.t("activity.started"), recipient: self
       users.each do |user|
-        create_activity key: I18n.t("activity.started"), owner: user
+        create_activity key: I18n.t("activity.started"),
+          owner: user, recipient: self
       end
     elsif finished?
       create_activity key: I18n.t("activity.finished"), recipient: self
       users.each do |user|
-        create_activity key: I18n.t("activity.finished"), owner: user
+        create_activity key: I18n.t("activity.finished"),
+          owner: user, recipient: self
       end
     end
   end
