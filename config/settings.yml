@@ -19,3 +19,5 @@ activity:
   per_page: 5
   all_activities: "all_activities"
   my_activities: "my_activities"
+mail_from: "admin@example.com"
+layout: "mailer"

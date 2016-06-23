@@ -7,8 +7,18 @@ class UserCourse < ActiveRecord::Base
   enum status: {ready: 0, started: 1, finished: 2}
 
   after_save :create_trainee_subject
+  after_create :send_mail_assign
+  before_destroy :send_mail_delete
 
   private
+  def send_mail_assign
+    UserMailer.assign_to_course(user, course).deliver_later
+  end
+
+  def send_mail_delete
+    UserMailer.delete_from_course(user, course).deliver_later
+  end
+
   def create_trainee_subject
     if self.course.course_subjects.any?
       TraineeSubject.transaction do

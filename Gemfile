@@ -17,6 +17,7 @@ gem "cancancan"
 gem "reform"
 gem "reform-rails"
 gem "public_activity"
+gem "sidekiq"
 
 group :development, :test do
   gem "byebug"

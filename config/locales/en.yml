@@ -183,3 +183,11 @@ en:
     you: "You"
     my_activities: "My Activity"
     all_activities: "All Activity"
+  mail: 
+    assign: "Assigned to a course %{content}"
+    delete: "Removed from a course %{content}"
+    welcome: "Hello, %{name}"
+    accept_in_course: "You had assigned in course %{content}"
+    delete_from_course: "You had been delete in course %{content}"
+    thanks: "Thanks for joining and have a great day!"
+    blank: "=============================="
