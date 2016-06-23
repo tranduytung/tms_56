@@ -56,7 +56,12 @@
                 <%= activity.trackable.content %>
               <% elsif is_course_subject? activity.trackable.class %>
                 <%= activity.trackable.subject.class %>
-                <%= activity.trackable.subject.content %>
+                <% if activity.trackable.present? %>
+                  <%= activity.trackable.subject.content %>
+                <% else %>
+                  <%= activity.trackable_id %>:
+                  <strong><%= t "activity.had_deleted" %></strong>
+                <% end %>
               <% end %>
             </li>
           <% end %>

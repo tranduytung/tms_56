@@ -28,6 +28,8 @@ class User < ActiveRecord::Base
   include PublicActivity::Model
   tracked
 
+  after_destroy :destroy_user_activities
+
   def follow other_user
     active_relationships.create followed_id: other_user.id
   end
@@ -42,5 +44,12 @@ class User < ActiveRecord::Base
 
   def password_required?
     new_record? ? super : false
+  end
+
+  private
+  def destroy_user_activities
+    PublicActivity::Activity.user(self).each do |activity|
+      activity.destroy!
+    end
   end
 end

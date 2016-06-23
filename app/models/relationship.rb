@@ -5,6 +5,7 @@ class Relationship < ActiveRecord::Base
   after_create :create_following_activity
   after_destroy :create_unfollow_activity
 
+  private
   def create_following_activity
     followed.create_activity key: I18n.t("activity.following"), owner: follower
   end
