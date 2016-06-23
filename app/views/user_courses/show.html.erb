@@ -1,26 +1,41 @@
 <%= provide :title, @user_course.course.content %>
-<h3><%= @user_course.course.content %></h3>
 <div class="row">
-  <div class="col-md-4">
-    <div class="panel panel-default">
-      <h3><%= t "courses.description" %></h3>
-      <p><%= @user_course.course.description %></p>
-      <br/>
-      <h3><%= t "courses.subjects" %></h3>
-      <ul>
-        <% @user_course.trainee_subjects.each do |trainee_subject| %>
-          <li>
-            <%= render "trainee_subject_form",
-              trainee_subject: trainee_subject %>
-            <hr>
-          </li>
-        <% end %>
-      </ul>
+  <div class="col-md-12">
+    <div class="panel panel-default text-center">
+      <div class="panel-heading">
+        <h3><%= @user_course.course.content %></h3><hr>
+        <%= @user_course.course.description %><hr>
+        <%= t "user_courses.status" %>
+        <%= render "shared/status_label", label: @user_course.course.status %>
+      </div>
     </div>
   </div>
-  <div class="col-md-4">
-    <div class="panel panel-default">
-      <h3><%= t :all_users %></h3>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default text-center">
+      <div class="panel-heading">
+        <h3><%= t "courses.subjects" %></h3>
+      </div>
+      <div class="panel-body">
+        <ul class="list-unstyled">
+          <% @user_course.trainee_subjects.each do |trainee_subject| %>
+            <li>
+              <h4>
+                <%= link_to trainee_subject.subject_content,
+                  trainee_subject_path(trainee_subject) %>
+              </h4>
+              <hr>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="panel panel-default text-center">
+      <div class="panel-heading">
+        <h3><%= t :all_users %></h3>
+      </div>
       <ul class="list-unstyled">
         <% @user_courses.each do |user_course| %>
           <div class="input-group fields">

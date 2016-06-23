@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   
   resources :user_courses, only: [:index, :show]
   resources :courses, only: [:index]
+  resources :trainee_subjects, only: [:show, :update]
 
   resources :users, only: [:show]
   resources :relationships, only: [:create, :destroy, :show]

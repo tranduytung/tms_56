@@ -1,29 +1,34 @@
-<div class="col-md-6 col-md-offset-1 panel panel-default">
+<div class="col-md-6 panel panel-default">
   <div class="text-center">
-    <h3><%= link_to t("courses.new_course"), supervisor_courses_path %></h3>
-    <hr />
+    <h3><%= link_to t("courses.new_course"), supervisor_courses_path %></h3><hr>
   </div>
-  <%= form_for [:supervisor, @course] do |f| %>
-    <%= render "shared/error_messages", object: @course %>
-    
-    <%= f.label :content, t("courses.content") %>
-    <%= f.text_field :content, class: "form-control" %>
-    
-    <%= f.label :description, t("courses.description") %>
-    <%= f.text_area :description, class: "form-control" %>
-    
-    <%= f.label :subjects, t("courses.subjects") %>
-    <%= f.collection_check_boxes :subject_ids, @subjects, :id, :content do |b| %>
-      <div class="col-md-offset-1">
-        <%= b.label do %>
-          <%= b.check_box + " " + b.text %>
-        <% end %>
-      </div>
+  <div class="panel-body">
+    <%= form_for [:supervisor, @course] do |f| %>
+      <%= render "shared/error_messages", object: @course %>
+      
+      <%= f.label :content, t("courses.content") %>
+      <%= f.text_field :content, class: "form-control", required: true %>
+      
+      <%= f.label :description, t("courses.description") %>
+      <%= f.text_area :description, class: "form-control", required: true %>
+      
+      <%= f.label :subjects, t("courses.subjects") %>
+      
+      <%= f.fields_for :course_subjects do |ff| %>
+        <div class="form-group">
+          <% if @course.subjects.include? ff.object.subject %>
+            <%= ff.hidden_field :id, value: ff.object.id %>
+            <%= ff.check_box :_destroy, {checked: true}, 0, 1 %>
+          <% else %>
+            <%= ff.check_box :subject_id, {checked: false},
+              ff.object.subject.id, "" %>
+          <% end %>
+          <%= ff.label :subject_id, ff.object.subject.content %>
+        </div>
+      <% end %>
+  
+      <%= f.submit t("courses.submit"),
+        class: "btn btn-primary col-md-4 col-md-offset-4" %>
     <% end %>
-    <div class="text-center">
-      <%= paginate @subjects, param_name: :subject_page, remote: true %>
-    </div>
-    <%= f.submit t("courses.submit"),
-      class: "btn btn-primary col-md-4 col-md-offset-4" %>
-  <% end %>
+  </div>
 </div>
