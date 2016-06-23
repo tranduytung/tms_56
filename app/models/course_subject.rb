@@ -12,10 +12,11 @@ class CourseSubject < ActiveRecord::Base
   include PublicActivity::Model
   tracked owner: Proc.new{|controller, model| controller.current_user}
 
-  after_update :activity
   after_create :create_trainee_subject_by_subject
+  after_update :create_subject_activity
 
-  def activity
+  private
+  def create_subject_activity
     if training?
       create_activity key: I18n.t("activity.subject.started"), recipient: course
       course.users.each do |user|
@@ -31,7 +32,6 @@ class CourseSubject < ActiveRecord::Base
     end
   end
 
-  private
   def create_trainee_subject_by_subject
     TraineeSubject.transaction do
       begin
