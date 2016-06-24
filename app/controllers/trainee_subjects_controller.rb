@@ -8,6 +8,8 @@ class TraineeSubjectsController < ApplicationController
       @trainee_subject.trainee_tasks.find_or_initialize_by user_id: 
         @trainee_subject.user.id, task_id: task.id
     end
+    @activities = PublicActivity::Activity.task(@subject.tasks)
+      .page(params[:page]).per Settings.activity.per_page
   end
 
   def update
