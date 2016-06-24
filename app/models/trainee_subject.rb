@@ -24,6 +24,8 @@ class TraineeSubject < ActiveRecord::Base
         started!
       elsif trainee_task_count >= task_count
         finished!
+        subject.create_activity key: I18n.t("activity.finished"), 
+          recipient: user_course.course
       end
     end
   end
