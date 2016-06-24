@@ -27,19 +27,16 @@ class Course < ActiveRecord::Base
   end
 
   private
-  def create_course_activity
-    if started?
-      create_activity key: I18n.t("activity.started"), recipient: self
-      users.each do |user|
-        create_activity key: I18n.t("activity.started"),
-          owner: user, recipient: self
-      end
-    elsif finished?
-      create_activity key: I18n.t("activity.finished"), recipient: self
-      users.each do |user|
-        create_activity key: I18n.t("activity.finished"),
-          owner: user, recipient: self
-      end
+
+  def create_activities type_action
+    create_activity key: type_action, recipient: self
+    user.each do |user|
+      create_activity key: type_action, owner: user, recipient: self
     end
+  end
+
+  def create_course_activity
+    started? ? (create_activities I18n.t("activity.started")) :
+      (create_activities I18n.t("activity.finished"))
   end
 end
