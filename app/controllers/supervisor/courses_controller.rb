@@ -6,7 +6,7 @@ class Supervisor::CoursesController < ApplicationController
     @course.build_course_subjects @course.subjects
     @search = @courses.ransack params[:q]
     unless params[:q].nil?
-      @courses = @search.result
+      @courses = @search.result.page(params[:page]).per Settings.courses.per_page
     end
   end
 

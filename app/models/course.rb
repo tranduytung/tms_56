@@ -30,7 +30,7 @@ class Course < ActiveRecord::Base
 
   def create_activities type_action
     create_activity key: type_action, recipient: self
-    user.each do |user|
+    users.each do |user|
       create_activity key: type_action, owner: user, recipient: self
     end
   end

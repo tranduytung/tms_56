@@ -101,7 +101,11 @@ en:
     start: "Preparing"
     training: "Started"
     finish: "Finished"
+    gratz: "Congratulations! You have finished the course!"
     go_to_subject: "Go"
+    go_back: "Go back to all courses page"
+    view_course: "View Course"
+    view_subject: "View subject"
 
   trainee_subjects:
     submit_tasks: "Finish tasks"
@@ -198,7 +202,7 @@ en:
     courses:
       search_course: "Search Course"
       content: "Course Content"
-      form_day: "Form Day"
+      from_day: "From Day"
       to_day: "To Day"
       subject_content: "Subject Content"
       day: "Day"
