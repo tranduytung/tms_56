@@ -18,6 +18,7 @@ gem "reform"
 gem "reform-rails"
 gem "public_activity"
 gem "sidekiq"
+gem "ransack"
 
 group :development, :test do
   gem "byebug"

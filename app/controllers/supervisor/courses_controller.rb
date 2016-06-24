@@ -2,9 +2,12 @@ class Supervisor::CoursesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @courses = @courses.page(params[:page]).per Settings.courses.per_page
     @course = Course.new
     @course.build_course_subjects @course.subjects
+    @search = @courses.ransack params[:q]
+    unless params[:q].nil?
+      @courses = @search.result
+    end
   end
 
   def show

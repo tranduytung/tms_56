@@ -1,0 +1,25 @@
+<h1><%= t "search.courses.search_course" %></h1>
+
+<%= search_form_for @search, url: supervisor_courses_path do |f| %>
+  <div class="large-5 small-4">
+    <%= f.label :content_cont, t("search.courses.content") %>
+    <%= f.text_field :content_cont, class: "radius",
+      placeholder: t("search.courses.content") %>
+  </div>
+  <hr>
+  <div class="large-5 small-4 columns">
+    <%= f.label :created_at_gteq, t("search.courses.form_day") %>
+    <%= f.date_field :created_at_gteq, class: "radius" %>
+    <%= f.label :created_at_lteq, t("search.courses.to_day") %>
+    <%= f.date_field :created_at_lteq, class: "radius" %>
+  </div>
+  <hr>
+  <div class="large-5 small-4">
+    <%= f.label :subjects_content_cont, t("search.courses.subject_content") %>
+    <%= f.search_field :subjects_content_cont %>
+  </div>
+  <hr>
+  <div class="column">
+    <%= f.submit t("search.courses.search_course"), class: "radius button" %>
+  </div>
+<% end %>

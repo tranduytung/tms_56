@@ -1,14 +1,21 @@
 <%= provide :title, t("user_courses.all_courses") %>
 
-<div>
+<div class="col-md-7">
   <h3><%= t "user_courses.all_courses" %></h3>
   <br>
   <ul class="list-inline">
-    <% @user_courses.each do |user_course| %>
+    <% @courses.each do |course| %>
       <li>
-        <%= link_to user_course.course.content, user_course,
+        <%= link_to course.content, user_course_path(load_user_course course),
           class: "btn btn-lg btn-default" %>
       </li>
     <% end %>
   </ul>
+  <tr>
+    <th><%= sort_link @search, :content, t("search.courses.content") %></th>
+    <th><%= sort_link @search, :created_at, t("search.courses.day") %></th>
+  </tr>
+</div>
+<div class="col-md-5">
+  <%= render "search" %>
 </div>
