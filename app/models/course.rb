@@ -17,6 +17,7 @@ class Course < ActiveRecord::Base
   tracked owner: Proc.new{|controller, model| controller.current_user}
   
   after_update :create_course_activity
+  after_create :send_mail_before_finish_course
 
   def build_course_subjects subjects = {}
     Subject.all.each do |subject|
@@ -38,5 +39,12 @@ class Course < ActiveRecord::Base
   def create_course_activity
     started? ? (create_activities I18n.t("activity.started")) :
       (create_activities I18n.t("activity.finished"))
+  end
+
+  def send_mail_before_finish_course
+    User.supervisor.each do |supervisor|
+      UserMailer.before_course_finish(supervisor, self).
+        deliver_later!(wait_until: (self.end_date.days.from_now - 2.days))
+    end
   end
 end

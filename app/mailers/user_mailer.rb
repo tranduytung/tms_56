@@ -12,4 +12,11 @@ class UserMailer < ApplicationMailer
     @course = course
     mail to: @user.email, subject: t("mail.delete", content: course.content)
   end
+
+  def before_course_finish supervisor, course
+    @supervisor = supervisor
+    @course = course
+    mail to: @supervisor.email,
+      subject: t("mail.before_course_finish", content: course.content)
+  end
 end

@@ -4,7 +4,7 @@ class UserCoursesController < ApplicationController
   def index
     @search = current_user.courses.ransack params[:q]
     if params[:q].nil?
-      @courses = @user_courses.courses
+      @courses = current_user.courses
     else
       @courses = @search.result
     end
