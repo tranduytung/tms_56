@@ -29,4 +29,8 @@ module ApplicationHelper
   def is_course_subject? class_name
     class_name == Settings.activity.course_subject
   end
+
+  def load_user_course course
+    course.user_courses.find_by user: current_user
+  end
 end

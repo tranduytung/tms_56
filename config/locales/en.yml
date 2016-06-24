@@ -75,6 +75,7 @@ en:
     finished: "This course has been closed"
     not_ready: "Course not ready"
     please_start: "Please start course first"
+    find: "Find Course"
 
   course_subjects:
     start: "Start"
@@ -183,6 +184,7 @@ en:
     you: "You"
     my_activities: "My Activity"
     all_activities: "All Activity"
+
   mail: 
     assign: "Assigned to a course %{content}"
     delete: "Removed from a course %{content}"
@@ -191,3 +193,12 @@ en:
     delete_from_course: "You had been delete in course %{content}"
     thanks: "Thanks for joining and have a great day!"
     blank: "=============================="
+
+  search:
+    courses:
+      search_course: "Search Course"
+      content: "Course Content"
+      form_day: "Form Day"
+      to_day: "To Day"
+      subject_content: "Subject Content"
+      day: "Day"

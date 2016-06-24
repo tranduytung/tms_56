@@ -20,10 +20,14 @@
             </div>
           <% end %>
         </ul>
-        <div class="text-center">
-          <%= paginate @courses %>
-        </div>
+        <tr>
+          <th><%= sort_link @search, :content, t("search.courses.content") %></th>
+          <th><%= sort_link @search, :created_at, t("search.courses.day") %></th>
+        </tr>
       </div>
+    </div>
+    <div class="panel panel-default">
+      <%= render "search" %>
     </div>
   </div>
   <div id="course_form">

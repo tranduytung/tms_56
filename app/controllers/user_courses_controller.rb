@@ -2,6 +2,12 @@ class UserCoursesController < ApplicationController
   load_and_authorize_resource
   
   def index
+    @search = current_user.courses.ransack params[:q]
+    if params[:q].nil?
+      @courses = @user_courses.courses
+    else
+      @courses = @search.result
+    end
   end
 
   def show
