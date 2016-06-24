@@ -3,6 +3,8 @@ class Course < ActiveRecord::Base
   has_many :users, through: :user_courses
   has_many :course_subjects, dependent: :destroy
   has_many :subjects, through: :course_subjects
+
+  belongs_to :user
   
   accepts_nested_attributes_for :course_subjects,
     reject_if: proc {|attributes| attributes[:subject_id].blank?},
@@ -10,6 +12,10 @@ class Course < ActiveRecord::Base
   accepts_nested_attributes_for :user_courses, allow_destroy: true
 
   validates :content, presence: true
+  validates :description, presence: true
+  validates :start_date, presence: true
+  validates :end_date, presence: true
+  validate :valid_dates
 
   enum status: {ready: 0, started: 1, finished: 2}
 
@@ -18,11 +24,15 @@ class Course < ActiveRecord::Base
   
   after_update :create_course_activity
 
-  def build_course_subjects subjects = {}
+  def build_course_subjects
     Subject.all.each do |subject|
-      unless subjects.include? subject
-        self.course_subjects.build subject_id: subject.id
+      built = false
+      course_subjects.each do |s|
+        if s.subject_id == subject.id
+          built = true
+        end
       end
+      self.course_subjects.build subject_id: subject.id unless built == true
     end
   end
 
@@ -38,5 +48,11 @@ class Course < ActiveRecord::Base
   def create_course_activity
     started? ? (create_activities I18n.t("activity.started")) :
       (create_activities I18n.t("activity.finished"))
+  end
+
+  def valid_dates
+    if start_date > end_date
+      errors.add :deadline, I18n.t("shared.not_valid_deadline")
+    end
   end
 end
