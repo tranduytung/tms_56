@@ -9,7 +9,8 @@
         <div class="row">
           <div class="col-md-12">
             <% @courses.each do |course| %>
-              <%= render "user_course", user_course: (load_user_course course) %>
+              <%= render "user_course", user_course:
+                current_user.user_courses.load_course(course) %>
             <% end %>
             <div class="text-center">
               <%= paginate @courses %>

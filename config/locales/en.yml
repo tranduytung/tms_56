@@ -160,7 +160,7 @@ en:
     please_add: "Please add a subject"
     edit_success: "Successfully edit subject"
     edit_fail: "Failed edit subject"
-    edit_subject: "Changes Subject"
+    edit_subject: "Edit Subject"
     submit: "Submit"
     form: "Subject Form"
     back: "Back to all subjects"
@@ -169,6 +169,7 @@ en:
     edit: "Edit"
     destroy_success: "Successfully destroy subject"
     destroy_fail: "Failed destroy subject"
+    view_subject: "View"
   
   task: 
     content: "content"
@@ -195,6 +196,8 @@ en:
     you: "You"
     my_activities: "My Activity"
     all_activities: "All Activity"
+    at: "at"
+    created: "Created"
 
   mail: 
     assign: "Assigned to a course %{content}"
