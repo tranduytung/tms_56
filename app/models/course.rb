@@ -46,8 +46,11 @@ class Course < ActiveRecord::Base
   end
 
   def create_course_activity
-    started? ? (create_activities I18n.t("activity.started")) :
-      (create_activities I18n.t("activity.finished"))
+    if started?
+      create_activities I18n.t("activity.started")
+    elsif finished?
+      create_activities I18n.t("activity.finished")
+    end
   end
 
   def valid_dates

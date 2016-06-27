@@ -6,6 +6,8 @@ class UserCourse < ActiveRecord::Base
 
   enum status: {ready: 0, started: 1, finished: 2}
 
+  scope :load_course, ->course{find_by course_id: course}
+  
   after_save :create_trainee_subject
   after_create :send_mail_assign
   before_destroy :send_mail_delete

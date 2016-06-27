@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :course_subjects, only: [:edit, :update]
     resources :user_courses, only: :destroy
     resources :users
-    resources :subjects, except:[:new]
+    resources :subjects
   end
   
   resources :user_courses, only: [:index, :show]

@@ -84,11 +84,8 @@
   <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading text-center">
-        <% if @bottom == Settings.activity.my_activities %>
-          <h3><%= t "activity.all_activities" %></h3>
-        <% else %>
-          <h3><%= t "activity.my_activities" %></h3>
-        <% end %>
+        <h3><%= (@bottom == Settings.activity.my_activities) ?
+          t("activity.all_activities") : t("activity.my_activities") %></h3>
       </div>
       <div class="panel-body">
         <ul class="list-unstyled">
@@ -102,11 +99,8 @@
             window: Settings.activity.pagination.window %></div>
           <%= link_to user_course_path @user_course, action_type: @bottom do %>
             <div class="btn btn-primary">
-              <% if @bottom == Settings.activity.my_activities %>
-                <%= t "activity.my_activities" %>
-              <% else %>
-                <%= t "activity.all_activities" %>
-              <% end %>
+              <%= (@bottom == Settings.activity.my_activities) ?
+                t("activity.my_activities") : t("activity.all_activities") %>
             </div>
           <% end %>
         </div>
