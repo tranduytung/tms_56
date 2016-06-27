@@ -44,8 +44,7 @@ class Course < ActiveRecord::Base
   def send_mail_before_finish_course
     User.supervisor.each do |supervisor|
       UserMailer.before_course_finish(supervisor, self).
-        deliver_later!(wait_until: (self.end_date - self.created_at - 172800)
-        deliver_later!(wait_until: (10.days.from_now))
+        deliver_later!(wait_until: (self.end_date - self.created_at - 2.days)
     end
   end
 end
