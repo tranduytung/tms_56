@@ -21,7 +21,8 @@
             <div class="col-md-2">
               <div class="panel panel-default text-center">
                 <h4><%= ff.label ff.object.task.content %></h4>
-                <%= ff.label ff.object.task.description %>
+                <%= ff.label ff.object.task.description if
+                  ff.object.task.description.present? %>
                 <% if ff.object.id.nil? %>
                   <p><%= ff.check_box :task_id, {checked: false},
                     ff.object.task.id %></p>

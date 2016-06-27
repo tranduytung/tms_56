@@ -57,7 +57,7 @@ en:
     not_valid_deadline: "End date must be later than start date"
 
   courses:
-    all_courses: "All courses"
+    all_courses: "All Courses"
     subjects: "Subjects"
     description: "Description"
     edit: "Edit"
