@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+
+  require "sidekiq/web"
+  mount Sidekiq::Web, at: "/sidekiq"
+  module Sidekiq
+    module WebHelpers
+      def locale
+        'en'
+      end
+    end
+  end
+
   devise_for :users, controllers: {
     registrations: "users/registrations"
   }

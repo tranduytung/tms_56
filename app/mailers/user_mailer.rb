@@ -17,6 +17,7 @@ class UserMailer < ApplicationMailer
     @supervisor = supervisor
     @course = course
     mail to: @supervisor.email,
-      subject: t("mail.before_course_finish", content: course.content)
+      subject: t("mail.before_course_finish", content: course.content,
+      day: end_date)
   end
 end

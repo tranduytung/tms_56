@@ -19,6 +19,7 @@ gem "reform-rails"
 gem "public_activity"
 gem "sidekiq"
 gem "ransack"
+gem "sinatra", require: false
 
 group :development, :test do
   gem "byebug"
