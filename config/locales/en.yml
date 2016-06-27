@@ -182,8 +182,9 @@ en:
   finish: "Finish"
   
   activity:
-    following: "Folowing"
-    unfollow: "Unfollow"
+    following: "folowing"
+    unfollow: "unfollow"
+    followed: "was followed by"
     started: "Started"
     finished: "Finished"
     status: "All status"
@@ -214,3 +215,5 @@ en:
       subject_content: "Subject Content"
       day: "Day"
       reset: "Reset"
+
+  activities: "Activity"

@@ -8,6 +8,7 @@ class Relationship < ActiveRecord::Base
   private
   def create_following_activity
     followed.create_activity key: I18n.t("activity.following"), owner: follower
+    follower.create_activity key: I18n.t("activity.followed"), owner: followed
   end
 
   def create_unfollow_activity

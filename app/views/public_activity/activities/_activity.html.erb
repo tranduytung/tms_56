@@ -14,7 +14,11 @@
     <%= activity.trackable_id %>
     <strong><%= t "activity.had_deleted" %></strong>
   <% else %>
-    <%= activity.trackable.class %>
-    <%= activity.trackable.content %>
+    <% if is_user? activity.trackable_type %>
+      <%= activity.trackable.name %>
+    <% else %>
+      <%= activity.trackable.class %>
+      <%= activity.trackable.content %>
+    <% end %>
   <% end %>
 </li>
