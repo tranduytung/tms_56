@@ -52,8 +52,9 @@ en:
     form: "This form contains "
     error: "error"
     delete_trainee_success: "Delete successfull"
-    delete_trainee_unsuccess: "Delete unsuccessfull"
-    new_user_successful: "Add new a user successfull"
+    delete_trainee_unsuccess: "Delete unsuccessful"
+    new_user_successful: "Add new a user successful"
+    not_valid_deadline: "End date must be later than start date"
 
   courses:
     all_courses: "All courses"
@@ -76,6 +77,13 @@ en:
     not_ready: "Course not ready"
     please_start: "Please start course first"
     find: "Find Course"
+    view_course: "View"
+    new_course: "New Course"
+    start_date: "Start date"
+    end_date: "End date"
+    go_back: "Go back to all courses"
+    choose_subject: "Choose subjects"
+    edit_course: "Edit course"
 
   course_subjects:
     start: "Start"
@@ -93,7 +101,7 @@ en:
     user: "user"
     in_course: "in course"
     please_add: "Please add a trainee"
-    add_trainees: "Add Trainees"
+    choose_trainee: "Choose Trainees"
     submit: "Submit"
     trainee_list_hint: "Hint: Trainee list can only be modified if the course hasn't been started"
     trainee_list_locked: "Trainee list locked"
@@ -149,7 +157,6 @@ en:
     submit: "Create subject"
     add_success: "Successfully add subject"
     add_fail: "Failed add subject"
-    add_subject: "Add Subject"
     please_add: "Please add a subject"
     edit_success: "Successfully edit subject"
     edit_fail: "Failed edit subject"
@@ -206,3 +213,4 @@ en:
       to_day: "To Day"
       subject_content: "Subject Content"
       day: "Day"
+      reset: "Reset"
