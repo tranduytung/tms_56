@@ -10,5 +10,9 @@
   </div>
   <div class="col-md-8">
     <%= render "follow_form" if user_signed_in? %>
+    <hr>
+    <div class="well">
+      <%= render @activities %>
+    </div>
   </div>
 </div>
