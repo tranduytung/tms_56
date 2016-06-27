@@ -37,7 +37,7 @@ class SubjectForm < Reform::Form
         Task.destroy task_ids_to_rm
         tasks.reject! {|i| task_ids_to_rm.include? i.id}
       end
-      tasks.reject! {|i| i.content.blank? && i.description.blank?}
+      tasks.reject! {|i| i.content.blank?}
     end
 
     super
