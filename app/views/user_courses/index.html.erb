@@ -8,6 +8,10 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-md-12">
+            <div class="text-center">
+              <%= t("courses.empty_course") if
+                current_user.user_courses.empty? %>
+            </div>
             <% @courses.each do |course| %>
               <%= render "user_course", user_course:
                 current_user.user_courses.load_course(course) %>

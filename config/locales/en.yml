@@ -84,6 +84,9 @@ en:
     go_back: "Go back to all courses"
     choose_subject: "Choose subjects"
     edit_course: "Edit course"
+    empty_course: "You are not currently in any course."
+    start_date: "Start date: %{date}"
+    end_date: "End date: %{date}"
 
   course_subjects:
     start: "Start"
