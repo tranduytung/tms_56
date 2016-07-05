@@ -23,6 +23,7 @@ class Course < ActiveRecord::Base
   tracked owner: Proc.new{|controller, model| controller.current_user}
   
   after_update :create_course_activity
+  after_create :send_mail_delay_before_course_finish
 
   def build_course_subjects
     Subject.all.each do |subject|
@@ -58,4 +59,11 @@ class Course < ActiveRecord::Base
       errors.add :deadline, I18n.t("shared.not_valid_deadline")
     end
   end
+
+  def send_mail_delay_before_course_finish
+    UserMailer.send_mail_before_course_finish(self).deliver_now
+  end
+
+  handle_asynchronously :send_mail_delay_before_course_finish,
+    run_at: Proc.new {8.hours.from_now}
 end

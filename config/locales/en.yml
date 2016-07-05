@@ -210,6 +210,7 @@ en:
     delete_from_course: "You had been delete in course %{content}"
     thanks: "Thanks for joining and have a great day!"
     blank: "=============================="
+    before_course_finish: "Course %{content} is finishing in 2 days"
 
   search:
     courses:
